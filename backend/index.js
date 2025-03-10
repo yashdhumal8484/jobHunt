@@ -11,10 +11,20 @@ dotenv.config({})
 const app=express();
 app.use(cookieParser());
 app.use(express.json());
-const corsOption={
-    origin:'http://localhost:5173',
-    credentials:true
-}
+const allowedOrigins = [
+    "http://localhost:5173", 
+    "https://jobhunt-front.onrender.com" 
+];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+};
 app.use(cors(corsOption));
 const PORT=process.env.PORT || 3000
 app.use("/api/v1/user",useRouter)
