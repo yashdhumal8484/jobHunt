@@ -12,8 +12,7 @@ const app=express();
 app.use(cookieParser());
 app.use(express.json());
 const allowedOrigins = [
-    "http://localhost:5173", 
-    "https://jobhunt-front.onrender.com" 
+    "http://localhost:5173"
 ];
 const corsOptions = {
     origin: function (origin, callback) {
@@ -25,7 +24,7 @@ const corsOptions = {
     },
     credentials: true
 };
-app.use(cors(corsOption));
+app.use(cors(corsOptions));
 const PORT=process.env.PORT || 3000
 app.use("/api/v1/user",useRouter)
 app.use("/api/v1/company",companyRouter)
