@@ -33,6 +33,10 @@ app.use("/api/v1/user",useRouter)
 app.use("/api/v1/company",companyRouter)
 app.use("/api/v1/job",jobRouter)
 app.use("/api/v1/application",applicationRouter)
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 app.listen(PORT,()=>{
     connectDB();
     console.log(`server running at ${PORT}`)
