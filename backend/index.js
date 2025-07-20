@@ -12,11 +12,7 @@ const app=express();
 app.use(cookieParser());
 app.use(express.json());
 const allowedOrigins = [
-    "http://localhost:5173",
-    "https://job-hunt-theta-nine.vercel.app",
-   "https://job-hunt-yashs-projects-85987c7a.vercel.app",
-    "https://job-hunt-git-main-yashs-projects-85987c7a.vercel.app",
-    "https://job-hunt-he77joonw-yashs-projects-85987c7a.vercel.app"
+    "http://localhost:5173"
 ];
 const corsOptions = {
     origin: function (origin, callback) {
