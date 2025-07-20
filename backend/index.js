@@ -11,24 +11,23 @@ dotenv.config({})
 const app=express();
 app.use(cookieParser());
 app.use(express.json());
-// const allowedOrigins = [
-//     "http://localhost:5173",
-//     "https://job-hunt-theta-nine.vercel.app"
-// ];
-// const corsOptions = {
-//     origin: function (origin, callback) {
-//         if (!origin || allowedOrigins.includes(origin)) {
-//             callback(null, true);
-//         } else {
-//             callback(new Error("Not allowed by CORS"));
-//         }
-//     },
-//     credentials: true
-// };
-// app.use(cors(corsOptions));
-app.use(cors({
-  origin: "*"
-}));
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://job-hunt-theta-nine.vercel.app"
+  "https://job-hunt-yashs-projects-85987c7a.vercel.app"
+];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+};
+app.use(cors(corsOptions));
+
 
 
 const PORT=process.env.PORT || 3000
