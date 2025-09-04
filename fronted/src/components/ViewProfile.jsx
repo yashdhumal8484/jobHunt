@@ -26,7 +26,7 @@ const ViewProfile = () => {
           <img 
             src="https://www.shutterstock.com/image-vector/circle-line-simple-design-logo-600nw-2174926871.jpg"
             alt="@shadcn"
-            className="object-contain "
+            className="object-contain"
           />
           </div>
           </Button>

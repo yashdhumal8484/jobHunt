@@ -20,7 +20,7 @@ const JobDescription = () => {
   const params = useParams();
   const jobId = params.id;
   const dispatch = useDispatch();
-
+  
   const applyJobHandler = async () => {
     try {
       const res = await axios.get(`${APPLICATION_API_END_POINT}/apply/${jobId}`, {
@@ -40,7 +40,6 @@ const JobDescription = () => {
       console.log(error);
     }
   };
-
   useEffect(() => {
     const fetchSingleJob = async () => {
       try {
@@ -101,7 +100,7 @@ const JobDescription = () => {
           Description:<span className="pl-4 font-normal text-gray-800">{singleJob?.description}</span>
         </h1>
         <h1 className="font-bold my-1">
-          Experience:<span className="pl-4 font-normal text-gray-800">{singleJob?.experience}</span>
+          Experience:<span className="pl-4 font-normal text-gray-800">{singleJob?.experienceLevel}</span>
         </h1>
         <h1 className="font-bold my-1">
           Salary:<span className="pl-4 font-normal text-gray-800">{singleJob?.salary}LPA</span>
